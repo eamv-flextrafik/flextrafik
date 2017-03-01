@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="302.0" prefWidth="576.0" styleClass="whiteBackground" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ExportController">
+   <children>
+      <ComboBox fx:id="comboYear" layoutX="20.0" layoutY="14.0" prefHeight="25.0" prefWidth="174.0" promptText="Årstal" stylesheets="@../style.css">
+         <styleClass>
+            <String fx:value="blueBtn" />
+            <String fx:value="noBorderRadius" />
+         </styleClass>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
+      <ComboBox fx:id="comboMonth" layoutX="206.0" layoutY="14.0" prefHeight="25.0" prefWidth="165.0" promptText="Måned" stylesheets="@../style.css">
+         <styleClass>
+            <String fx:value="blueBtn" />
+            <String fx:value="noBorderRadius" />
+         </styleClass>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
+      <TableView fx:id="tableTrips" layoutX="20.0" layoutY="49.0" prefHeight="200.0" prefWidth="534.0" styleClass="noBorderRadius" stylesheets="@../style.css">
+        <columns>
+          <TableColumn fx:id="username" prefWidth="105.0" text="Brugernavn" />
+            <TableColumn fx:id="name" prefWidth="147.0" text="Navn" />
+            <TableColumn fx:id="date" prefWidth="207.0" text="Dato" />
+            <TableColumn fx:id="price" prefWidth="73.0" text="Pris" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnExport" disable="true" layoutX="20.0" layoutY="258.0" mnemonicParsing="false" onAction="#btnExport" stylesheets="@../style.css" text="Eksporter">
+         <styleClass>
+            <String fx:value="btn" />
+            <String fx:value="blueBtn" />
+            <String fx:value="noBorderRadius" />
+         </styleClass>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+   </children>
+</AnchorPane>

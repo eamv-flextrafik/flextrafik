@@ -1,0 +1,33 @@
+.blueBtn, .combo-box .cell {
+	-fx-background-color: #4AA3DF;
+	-fx-text-fill: #F9F9F9;
+}
+
+.combo-box .arrow {
+	-fx-background-color: #F9F9F9;
+}
+
+.btn {
+	-fx-border-style: none;
+	-fx-font-size: 14;
+}
+
+.whiteTextColor {
+	-fx-text-fill: #F9F9F9;
+}
+
+.noBorderRadius {
+	-fx-border-radius: 0, 0, 0, 0;
+	-fx-background-radius: 0, 0, 0, 0;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-color: #4AA3DF;
+}
+
+.whiteBackground {
+	-fx-background-color: #F9F9F9;
+}
+

@@ -1,0 +1,115 @@
+CREATE DATABASE if not EXISTS fts
+COLLATE utf8_unicode_ci;
+
+
+CREATE TABLE IF NOT EXISTS fts.roles (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL UNIQUE
+    ) ENGINE = INNODB;
+
+	INSERT INTO fts.roles(name) VALUES("Admin");
+	INSERT INTO fts.roles(name) VALUES("AuthendicatedUser");
+    
+CREATE TABLE IF NOT EXISTS fts.users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    roleId INT NOT NULL,
+    username VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    phonenumber VARCHAR(255) NOT NULL,
+    CPRnumber VARCHAR(10) NOT NULL UNIQUE,
+    FOREIGN KEY (roleId) REFERENCES fts.roles(id)
+    ) ENGINE = INNODB;
+
+
+	INSERT INTO fts.users(roleId, username, password, name, phonenumber, CPRnumber) VALUES 
+
+(2,"mm","mm","Martin",25387180,0702923431);
+
+	INSERT INTO fts.users(roleId, username, password, name, phonenumber, CPRnumber) VALUES 
+
+(1,"Zeltres","Zelt","Dennis",25386754,1004913737);
+
+	INSERT INTO fts.users(roleId, username, password, name, phonenumber, CPRnumber) VALUES 
+
+(2,"Etharion","Etha","Rasmus",37387180,0406962231);
+
+	INSERT INTO fts.users(roleId, username, password, name, phonenumber, CPRnumber) VALUES 
+
+(1,"tt","tt","Tsvetelin Tsonev",23457688,2209862391);
+
+	INSERT INTO fts.users(roleId, username, password, name, phonenumber, CPRnumber) VALUES 
+
+(1,"admin","admin","Admin",23434688,2245862391);
+
+
+CREATE TABLE IF NOT EXISTS fts.flexDrives (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    userId INT NOT NULL,
+    addressFrom VARCHAR(255) NOT NULL,
+    addressTo VARCHAR (255) NOT NULL,
+    fromMunicipality VARCHAR(255) NOT NULL,
+    toMunicipality VARCHAR(255) NOT NULL,
+    price DECIMAL NOT NULL,
+    bookedFor TIMESTAMP NOT NULL,
+    bookedAt TIMESTAMP NOT NULL,
+    passengers INT NOT NULL,
+    luggage INT,
+    pram INT,
+    childCarSeat INT,
+    assistive INT,
+    comment VARCHAR(255),
+    approved BOOLEAN DEFAULT false,
+    FOREIGN KEY (userId) REFERENCES fts.users(id)
+    ) ENGINE = INNODB;
+
+	INSERT INTO fts.FlexDrives
+	(userId,addressFrom, addressTo, fromMunicipality, toMunicipality, price, bookedFor,bookedAt, passengers, luggage, pram, childCarSeat, assistive)
+	VALUES(1, "Leonora Christinas vej 53", "Smallegade 4", "Ikast-Brande", "Herning", 100, NOW() + interval 5 day, NOW(), 2, 0, 0, 0, 1);
+
+	INSERT INTO fts.FlexDrives
+	(userId,addressFrom, addressTo, fromMunicipality, toMunicipality, price, bookedFor,bookedAt, passengers, luggage, pram, childCarSeat, assistive)
+	VALUES(2, "Gl. Landevej 22", "Studentervej 12","Silkeborg", "Aarhus", 200, NOW() + interval 10 day, NOW(), 10, 4, 1, 1, 0);
+
+	INSERT INTO fts.FlexDrives
+	(userId,addressFrom, addressTo, fromMunicipality, toMunicipality, price, bookedFor,bookedAt, passengers, luggage, pram, childCarSeat, assistive)
+	VALUES(3, "Leonora Christinas vej 53", "Oddervej 90","Randers", "Nordjurs", 50, NOW() + interval 1 day, NOW(), 1, 1, 1, 1, 0);
+
+	INSERT INTO fts.FlexDrives
+	(userId,addressFrom, addressTo, fromMunicipality, toMunicipality, price, bookedFor,bookedAt, passengers, luggage, pram, childCarSeat, assistive)
+	VALUES(4, "Oddervej 2", "Thorsgade 62","Odder", "Horsens", 70, NOW() + interval 2 day, NOW(), 2, 0, 0, 0, 0);
+
+CREATE TABLE IF NOT EXISTS fts.cars(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    registryPlate VARCHAR (255) NOT NULL UNIQUE
+    ) ENGINE = INNODB;
+
+	INSERT INTO fts.cars (registryPlate) VALUES ("AA25478");
+	INSERT INTO fts.cars (registryPlate) VALUES ("AZ32421");
+	INSERT INTO fts.cars (registryPlate) VALUES ("EZ29856");
+	INSERT INTO fts.cars (registryPlate) VALUES ("AB25478");
+	INSERT INTO fts.cars (registryPlate) VALUES ("AC32421");
+	INSERT INTO fts.cars (registryPlate) VALUES ("ED29856");
+	INSERT INTO fts.cars (registryPlate) VALUES ("AE25478");
+	INSERT INTO fts.cars (registryPlate) VALUES ("AF32421");
+	INSERT INTO fts.cars (registryPlate) VALUES ("EG29856");
+	INSERT INTO fts.cars (registryPlate) VALUES ("AH25478");
+	INSERT INTO fts.cars (registryPlate) VALUES ("AI32421");
+	INSERT INTO fts.cars (registryPlate) VALUES ("EJ29856");
+	INSERT INTO fts.cars (registryPlate) VALUES ("AK25478");
+	INSERT INTO fts.cars (registryPlate) VALUES ("AL32421");
+	INSERT INTO fts.cars (registryPlate) VALUES ("EM29856");
+	INSERT INTO fts.cars (registryPlate) VALUES ("AN25478");
+	INSERT INTO fts.cars (registryPlate) VALUES ("AO32421");
+	
+	
+CREATE TABLE IF NOT EXISTS fts.assignedCars(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    bookedFlexDrivesId INT NOT NULL,
+    carId INT NOT NULL,
+    FOREIGN KEY (bookedFlexDrivesId) REFERENCES fts.flexDrives(id),
+    FOREIGN KEY (carId) REFERENCES fts.cars(id)
+    ) ENGINE = INNODB;
+	
+	INSERT INTO fts.assignedCars (bookedFlexDrivesId,carId) VALUES (1,1);
+	

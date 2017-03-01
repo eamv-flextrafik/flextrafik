@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="324.0" prefWidth="258.0" styleClass="whiteBackground" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.CreateProfileController">
+   <children>
+      <TextField fx:id="textUsername" layoutX="19.0" layoutY="34.0" prefHeight="25.0" prefWidth="220.0" promptText="eks.: Zeltres" styleClass="noBorderRadius" stylesheets="@../style.css" />
+      <PasswordField fx:id="textPassword" layoutX="19.0" layoutY="90.0" prefHeight="25.0" prefWidth="220.0" promptText="eks.: 123h3" styleClass="noBorderRadius" stylesheets="@../style.css" />
+      <TextField fx:id="textName" layoutX="19.0" layoutY="143.0" prefHeight="25.0" prefWidth="220.0" promptText="eks.: Rasmus" styleClass="noBorderRadius" stylesheets="@../style.css" />
+      <TextField fx:id="textPhonenumber" layoutX="19.0" layoutY="197.0" prefHeight="25.0" prefWidth="220.0" promptText="eks. 24648053" styleClass="noBorderRadius" stylesheets="@../style.css" />
+      <TextField fx:id="textCPRnumber" layoutX="19.0" layoutY="252.0" prefHeight="25.0" prefWidth="220.0" promptText="eks.: 2309931111" styleClass="noBorderRadius" stylesheets="@../style.css" />
+      <Button fx:id="btnOpret" layoutX="183.0" layoutY="285.0" mnemonicParsing="false" onAction="#btnOpret" stylesheets="@../style.css" text="Opret">
+         <styleClass>
+            <String fx:value="btn" />
+            <String fx:value="blueBtn" />
+            <String fx:value="noBorderRadius" />
+         </styleClass>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Label layoutX="19.0" layoutY="14.0" text="Brugernavn" />
+      <Label layoutX="19.0" layoutY="69.0" text="Password" />
+      <Label layoutX="20.0" layoutY="124.0" text="Navn" />
+      <Label layoutX="20.0" layoutY="178.0" text="Telefonnummer" />
+      <Label layoutX="20.0" layoutY="231.0" text="CPR-nummer" />
+   </children>
+</AnchorPane>

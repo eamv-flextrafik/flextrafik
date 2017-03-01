@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="375.0" prefWidth="876.0" styleClass="whiteBackground" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.UserController">
+   <children>
+      <Button fx:id="btnBookFlexDrive" layoutX="28.0" layoutY="275.0" mnemonicParsing="false" onAction="#btnBookFlexDrive" prefHeight="30.0" prefWidth="105.0" stylesheets="@../style.css" text="Bestil kørsel">
+         <styleClass>
+            <String fx:value="btn" />
+            <String fx:value="blueBtn" />
+            <String fx:value="noBorderRadius" />
+         </styleClass>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnUpdateProfile" layoutX="28.0" layoutY="316.0" mnemonicParsing="false" onAction="#btnUpdateProfile" stylesheets="@../style.css" text="Rediger profil">
+         <styleClass>
+            <String fx:value="btn" />
+            <String fx:value="blueBtn" />
+            <String fx:value="noBorderRadius" />
+         </styleClass>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <TableView fx:id="tableTrips" layoutX="147.0" layoutY="29.0" prefHeight="317.0" prefWidth="697.0" stylesheets="@../style.css">
+        <columns>
+          <TableColumn fx:id="from" prefWidth="149.0" text="Fra" />
+          <TableColumn fx:id="to" prefWidth="127.0" text="Til" />
+            <TableColumn fx:id="bookedFor" prefWidth="187.0" text="Dato" />
+            <TableColumn fx:id="approved" minWidth="4.0" prefWidth="123.0" text="Godkendt" />
+            <TableColumn fx:id="price" minWidth="0.0" prefWidth="110.0" text="Pris" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

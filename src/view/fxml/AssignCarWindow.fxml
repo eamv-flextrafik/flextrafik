@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="92.0" prefWidth="228.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.AssignCarController">
+   <children>
+      <ComboBox fx:id="comboCar" layoutX="53.0" layoutY="12.0" prefHeight="25.0" prefWidth="159.0" promptText="Vælg bil" stylesheets="@../style.css">
+         <styleClass>
+            <String fx:value="blueBtn" />
+            <String fx:value="noBorderRadius" />
+         </styleClass>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
+      <Button fx:id="btnApproveTrip" layoutX="112.0" layoutY="54.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" stylesheets="@../style.css" text="Godkend tur">
+         <styleClass>
+            <String fx:value="btn" />
+            <String fx:value="blueBtn" />
+            <String fx:value="noBorderRadius" />
+         </styleClass>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Label layoutX="17.0" layoutY="16.0" text="Bil" />
+   </children>
+</AnchorPane>
