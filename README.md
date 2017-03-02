@@ -1,6 +1,6 @@
 ## Flextrafik summary
 
-Together with my teammates [Dennis]( https://github.com/Zeltres), [Rasmus]( https://github.com/etharion) and, [Martin](https://github.com/Mcairborne), we used Unified Process to develop this app. We chose JavaFX as a Java desktop platform, Scene Builder for creating the views and MySQL as a data storage system. 
+We used Unified Process to develop this app. We chose JavaFX as a Java desktop platform, Scene Builder for creating the views and MySQL as a data storage system. 
 We designed the software following the MVC pattern, segregated it in three layers and we applied most of the GRASP principles.
 
 ### Screenshots
